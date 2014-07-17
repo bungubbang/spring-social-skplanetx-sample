@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.5
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+jar {
+    baseName = 'spring-social-skplanetx-sample'
+    version =  '0.0.1-SNAPSHOT'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.0.BUILD-SNAPSHOT")
+    }
+}
+
+
+dependencies {
+    compile(files('libs/spring-social-skplanetx-1.0.0.RELEASE.jar'))
+
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-jdbc:$springBootVersion")
+    compile("org.springframework.social:spring-social-core:$springSocialVersion")
+    compile("org.springframework.social:spring-social-web:$springSocialVersion")
+    compile("org.springframework.social:spring-social-config:$springSocialVersion")
+    compile("org.springframework.security:spring-security-crypto:$springSecurityVersion")
+    compile("com.h2database:h2:$h2databaseVersion")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+}
