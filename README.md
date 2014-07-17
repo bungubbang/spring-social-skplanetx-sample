@@ -10,3 +10,6 @@ Reference
 * spring-social-skplanetx : [https://github.com/bungubbang/spring-social-skplanetx](https://github.com/bungubbang/spring-social-skplanetx)
 * spring-social : [http://projects.spring.io/spring-social/](http://projects.spring.io/spring-social/)
 * spring-boot : [http://projects.spring.io/spring-boot/](http://projects.spring.io/spring-boot/)
+
+if you have `javax.net.ssl.SSLProtocolException: handshake alert:  unrecognized_name` error.
+Please add jvm option `-Djsse.enableSNIExtension=false`.
